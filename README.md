@@ -121,8 +121,7 @@ The PowerPoint slide deck `Capstone_Project_Presentation.pptx` contains:
 ---
 
 ## 🔗 GitHub Repository
-
-(https://github.com/Dimeji278/MultiTier-Project.git)
+https://github.com/Dimeji278/MultiTier-Project.git
 ---
 
 ## 👏 Contributors
