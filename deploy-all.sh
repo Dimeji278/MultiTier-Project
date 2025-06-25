@@ -15,10 +15,10 @@ WEB_PREFIX="10.0.1.0/24"
 APP_PREFIX="10.0.2.0/24"
 DB_PREFIX="10.0.3.0/24"
 
-echo "✅ Creating Resource Group: $RESOURCE_GROUP..."
+echo "Creating Resource Group: $RESOURCE_GROUP..."
 az group create --name $RESOURCE_GROUP --location $LOCATION
 
-echo "✅ Creating Virtual Network: $VNET_NAME with $SUBNET_WEB..."
+echo "Creating Virtual Network: $VNET_NAME with $SUBNET_WEB..."
 az network vnet create \
   --resource-group $RESOURCE_GROUP \
   --name $VNET_NAME \
@@ -26,14 +26,14 @@ az network vnet create \
   --subnet-name $SUBNET_WEB \
   --subnet-prefix $WEB_PREFIX
 
-echo "✅ Creating $SUBNET_APP subnet..."
+echo "Creating $SUBNET_APP subnet..."
 az network vnet subnet create \
   --resource-group $RESOURCE_GROUP \
   --vnet-name $VNET_NAME \
   --name $SUBNET_APP \
   --address-prefix $APP_PREFIX
 
-echo "✅ Creating $SUBNET_DB subnet..."
+echo "Creating $SUBNET_DB subnet..."
 az network vnet subnet create \
   --resource-group $RESOURCE_GROUP \
   --vnet-name $VNET_NAME \
@@ -82,7 +82,7 @@ az network vnet subnet update --resource-group "$RESOURCE_GROUP" --vnet-name Gro
 az network vnet subnet update --resource-group "$RESOURCE_GROUP" --vnet-name Group5-VNet --name App-Subnet --network-security-group "$NSG_APP"
 az network vnet subnet update --resource-group "$RESOURCE_GROUP" --vnet-name Group5-VNet --name DB-Subnet --network-security-group "$NSG_DB"
 
-echo "✅ NSG setup complete."
+echo "NSG setup complete."
 
 
 # Variables
@@ -93,7 +93,7 @@ SSH_KEY_PATH="$HOME/.ssh/id_rsa.pub"
 IMAGE="Ubuntu2204"
 
 # Web VM
-echo "💻 Creating Web VM in Web-Subnet..."
+echo "Creating Web VM in Web-Subnet..."
 az vm create \
   --resource-group "$RESOURCE_GROUP" \
   --name webVM \
@@ -107,7 +107,7 @@ az vm create \
   --no-wait
 
 # App VM
-echo "💻 Creating App VM in App-Subnet..."
+echo "Creating App VM in App-Subnet..."
 az vm create \
   --resource-group "$RESOURCE_GROUP" \
   --name appVM \
@@ -121,7 +121,7 @@ az vm create \
   --no-wait
 
 # DB VM
-echo "💻 Creating DB VM in DB-Subnet..."
+echo "Creating DB VM in DB-Subnet..."
 az vm create \
   --resource-group "$RESOURCE_GROUP" \
   --name dbVM \
@@ -134,7 +134,7 @@ az vm create \
   --public-ip-sku Standard \
   --no-wait
 
-echo "🎉 VM provisioning initiated."
+echo "VM provisioned."
 
 
 

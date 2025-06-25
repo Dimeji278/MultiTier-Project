@@ -42,4 +42,4 @@ az network vnet subnet update --resource-group "$RESOURCE_GROUP" --vnet-name Gro
 az network vnet subnet update --resource-group "$RESOURCE_GROUP" --vnet-name Group5-VNet --name App-Subnet --network-security-group "$NSG_APP"
 az network vnet subnet update --resource-group "$RESOURCE_GROUP" --vnet-name Group5-VNet --name DB-Subnet --network-security-group "$NSG_DB"
 
-echo "✅ NSG setup complete."
+echo "NSG setup complete."
