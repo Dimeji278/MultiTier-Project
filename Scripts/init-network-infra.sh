@@ -15,10 +15,10 @@ WEB_PREFIX="10.0.1.0/24"
 APP_PREFIX="10.0.2.0/24"
 DB_PREFIX="10.0.3.0/24"
 
-echo "✅ Creating Resource Group: $RESOURCE_GROUP..."
+echo "Creating Resource Group: $RESOURCE_GROUP..."
 az group create --name $RESOURCE_GROUP --location $LOCATION
 
-echo "✅ Creating Virtual Network: $VNET_NAME with $SUBNET_WEB..."
+echo "Creating Virtual Network: $VNET_NAME with $SUBNET_WEB..."
 az network vnet create \
   --resource-group $RESOURCE_GROUP \
   --name $VNET_NAME \
@@ -26,18 +26,18 @@ az network vnet create \
   --subnet-name $SUBNET_WEB \
   --subnet-prefix $WEB_PREFIX
 
-echo "✅ Creating $SUBNET_APP subnet..."
+echo "Creating $SUBNET_APP subnet..."
 az network vnet subnet create \
   --resource-group $RESOURCE_GROUP \
   --vnet-name $VNET_NAME \
   --name $SUBNET_APP \
   --address-prefix $APP_PREFIX
 
-echo "✅ Creating $SUBNET_DB subnet..."
+echo "Creating $SUBNET_DB subnet..."
 az network vnet subnet create \
   --resource-group $RESOURCE_GROUP \
   --vnet-name $VNET_NAME \
   --name $SUBNET_DB \
   --address-prefix $DB_PREFIX
 
-echo "🎉 Network setup complete!"
+echo "Network setup complete!"

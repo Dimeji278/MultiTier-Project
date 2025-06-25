@@ -9,7 +9,7 @@ SSH_KEY_PATH="$HOME/.ssh/id_rsa.pub"
 IMAGE="Ubuntu2204"
 
 # Web VM
-echo "💻 Creating Web VM in Web-Subnet..."
+echo "Creating Web VM in Web-Subnet..."
 az vm create \
   --resource-group "$RESOURCE_GROUP" \
   --name webVM \
@@ -23,7 +23,7 @@ az vm create \
   --no-wait
 
 # App VM
-echo "💻 Creating App VM in App-Subnet..."
+echo "Creating App VM in App-Subnet..."
 az vm create \
   --resource-group "$RESOURCE_GROUP" \
   --name appVM \
@@ -37,7 +37,7 @@ az vm create \
   --no-wait
 
 # DB VM
-echo "💻 Creating DB VM in DB-Subnet..."
+echo "Creating DB VM in DB-Subnet..."
 az vm create \
   --resource-group "$RESOURCE_GROUP" \
   --name dbVM \
@@ -50,4 +50,4 @@ az vm create \
   --public-ip-sku Standard \
   --no-wait
 
-echo "🎉 VM provisioning initiated."
+echo "VM provisioning initiated."
